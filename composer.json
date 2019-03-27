@@ -1,0 +1,19 @@
+{
+    "name": "miketan/laravelSimpleTrelloErrorReporting",
+    "description": "This package helps to create cards in trello board when system exception found.",
+    "type": "library",
+    "require": {
+        "laravelcollective/html": "^5.5",
+        "gregoriohc/laravel-trello": "^0.3.0"
+    },
+    "require-dev": {
+        "gregoriohc/laravel-trello": "^0.3.0"
+    },
+    "authors": [
+        {
+            "name": "miketan",
+            "email": "tabjen99@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
