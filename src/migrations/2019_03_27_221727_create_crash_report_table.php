@@ -16,7 +16,9 @@ class CreateCrashReportTable extends Migration
             $table->increments('id');
             $table->text('subject');
             $table->longText('content');
-             $table->softDeletes();
+            $table->integer('count')->default(1);
+            $table->string('trello_id')->default('');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
