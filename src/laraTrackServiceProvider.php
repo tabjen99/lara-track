@@ -1,10 +1,11 @@
 <?php
 
-namespace miketan\laravelSimpleTrelloErrorReporting;
+namespace miketan\laraTrack;
 
 use Illuminate\Support\ServiceProvider;
 
-class laravelSimpleTrelloErrorReportingServiceProvider extends ServiceProvider
+use miketan\laraTrack\CrashReportClass;
+class laraTrackServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -22,7 +23,7 @@ class laravelSimpleTrelloErrorReportingServiceProvider extends ServiceProvider
             __DIR__.'/migrations/' => database_path('migrations')
         ], 'migrations');
 
-        
+
         //$this->loadMigrationsFrom(__DIR__.'/migrations');
         //$this->loadViewsFrom(__DIR__.'/views', 'laravelSimpleTrelloErrorReporting');
         // $this->publishes([
@@ -38,13 +39,10 @@ class laravelSimpleTrelloErrorReportingServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->bind('CrashReport', function() {
-            dd('aaa');
-            return new CrashReport;
+        $this->app->bind('crashReport', function() {
+            return new CrashReportClass;
         });
         include __DIR__.'/routes.php';
-        //$this->app->make('Laraveldaily\Timezones\TimezonesController');
 
-         $this->app->make('miketan\laravelSimpleTrelloErrorReporting\CrashReportController');
     }
 }

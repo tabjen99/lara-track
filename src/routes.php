@@ -1,2 +1,2 @@
 <?php
-Route::resource('/crash-reporting', 'miketan\laravelSimpleTrelloErrorReporting\CrashReportController');
+Route::resource('/crash-reporting', 'miketan\laraTrack\CrashReportController');

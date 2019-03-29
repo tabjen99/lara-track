@@ -1,5 +1,5 @@
 <?php
-namespace miketan\laravelSimpleTrelloErrorReporting;
+namespace miketan\laraTrack;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -7,6 +7,6 @@ class CrashReportFacade extends Facade
 {
     protected static function getFacadeAccessor() { 
 
-        return 'miketan\laravelSimpleTrelloErrorReporting\CrashReport';
+        return 'crashReport';
     }
 }

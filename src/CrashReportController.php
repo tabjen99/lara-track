@@ -1,6 +1,6 @@
 <?php
 
-namespace miketan\laravelSimpleTrelloErrorReporting;
+namespace miketan\laraTrack;
 
 use Illuminate\Http\Request;
 
@@ -49,10 +49,11 @@ class CrashReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    static function show(array $request)
+    public function show(array $request)
     {
         //dd($request);
         //$input = Request::all();
+        dd('here');
         CrashReport::create(array('subject'=>$request['subject'],'content'=>$request['content']));
         return true;
     }
