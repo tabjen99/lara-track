@@ -31,13 +31,20 @@ php artisan vendor:publish --provider="Gregoriohc\LaravelTrello\TrelloServicePro
 
 Provider
 ```
-Gregoriohc\LaravelTrello\TrelloServiceProvider::class,
-miketan\laraTrack\laraTrackServiceProvider::class,
+'providers' => [
+  ...
+  Gregoriohc\LaravelTrello\TrelloServiceProvider::class,
+   miketan\laraTrack\laraTrackServiceProvider::class,
+],
 ```
 Alias
 ```
-'Trello' => Gregoriohc\LaravelTrello\Facades\Wrapper::class,
-'TrelloCrashReport' =>miketan\laraTrack\CrashReportFacade::class,
+'aliases' => [
+  ...
+  'Trello' => Gregoriohc\LaravelTrello\Facades\Wrapper::class,
+  'TrelloCrashReport' =>miketan\laraTrack\CrashReportFacade::class,
+],
+
 ```
 6. In config/trello.php enter api_key, api_token, board, & list
 7. Publish migration file & perform migration.
@@ -49,6 +56,7 @@ php artisan migrate
 ```
 php artisan config:cache
 ```
+### Usage
 9. Replace function report(Exception $e) in app/exceptions/Handler.php to :
 ```
  public function report(Exception $e)
